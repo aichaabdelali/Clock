@@ -4,20 +4,23 @@ const hour = document.getElementById("hour");
 const minutes = document.getElementById("minutes");
 const seconds = document.getElementById("seconds");
 
-const current_date = new Date();
+let current_date = new Date();
 
-//clock
 const formatTime = (time) => {
   return time < 10 ? `0${time}` : time;
 };
 
-const showTime = () => {
-  hour.innerHTML = formatTime(current_date.getHours());
-  minutes.innerHTML = formatTime(current_date.getMinutes());
-  seconds.innerHTML = formatTime(current_date.getSeconds());
-};
+setInterval(function showTime() {
+  let current_date = new Date();
+  let hr = current_date.getHours();
+  let min = current_date.getMinutes();
+  let sec = current_date.getSeconds();
 
-//how to perfect it ? switch function ?
+  hour.innerHTML = formatTime(hr);
+  minutes.innerHTML = formatTime(min);
+  seconds.innerHTML = formatTime(sec);
+}, 1000);
+
 const switchBg = () => {
   //morning
   if (current_date.getHours() >= 8 && current_date.getHours() <= 11) {
@@ -44,5 +47,4 @@ const switchBg = () => {
   }
 };
 
-showTime();
 switchBg();
