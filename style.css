@@ -1,19 +1,23 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400&display=swap");
 
 * {
   box-sizing: border-box;
 }
 
 body {
+  background-image: url("https://images.pexels.com/photos/1261728/pexels-photo-1261728.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
+  font-family: "Inconsolata", monospace;
+  color: #fefefe;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
   margin: 0;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: background-image 0.5s linear;
 }
 
 .time {
@@ -22,10 +26,7 @@ body {
   align-items: center;
   width: 500px;
   height: 120px;
-  font-family: "Roboto Mono", monospace;
-  font-weight: 700;
-  color: #fefefe;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+  font-weight: 400;
   font-size: 100px;
   margin: 0;
   padding: 0;
@@ -35,4 +36,11 @@ body {
 .minutes-container,
 .seconds-container {
   display: flex;
+}
+
+@media screen and (max-width: 480px) {
+  .time {
+    width: 400px;
+    font-size: 72px;
+  }
 }
